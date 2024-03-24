@@ -1,0 +1,9 @@
+project = "lcars_plugin_status"
+version = 1
+author = "Frank Holler"
+
+[setup]
+requirements = ["pyyaml"]
+
+[setup.run]
+status = "%git%/lcars_plugin_status/run/status.py %base%"

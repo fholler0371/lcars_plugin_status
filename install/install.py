@@ -26,5 +26,7 @@ async def install(parent_cfg: dict) -> dict:
                                                          stdout=asyncio.subprocess.PIPE)
         await p.wait()
     with bash_profile.open('w') as f:
-        f.write('clear\nlcars-status\n')    
+        f.write(r"""clear
+lcars-status
+export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w \$\[\033[00m\] '""")    
     return out

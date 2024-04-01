@@ -175,6 +175,7 @@ async def main() -> None:
             info.append(f'{result[0]:.<{LEN}}: {result[1].result()}')
     for line in zip_longest(BERRY.split('\n'), info):
         print(f'{"                  " if line[0] is None else line[0]}{"" if line[1] is None else line[1]}')
+    print('')
 
 if __name__ == '__main__':
     asyncio.run(main())
